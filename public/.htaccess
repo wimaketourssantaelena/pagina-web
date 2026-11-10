@@ -22,9 +22,9 @@ ErrorDocument 404 /404.html
 
 <IfModule mod_headers.c>
   <FilesMatch "^index\.(html|md)$">
-    Header add Link "</llms.txt>; rel=\"describedby\"; type=\"text/plain\""
-    Header add Link "</index.md>; rel=\"alternate\"; type=\"text/markdown\""
-    Header add Link "</sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\""
+    Header add Link "</llms.txt>; rel=describedby"
+    Header add Link "</index.md>; rel=alternate"
+    Header add Link "</sitemap.xml>; rel=sitemap"
     Header append Vary Accept
   </FilesMatch>
 </IfModule>
