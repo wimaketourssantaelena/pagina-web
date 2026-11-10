@@ -1,0 +1,481 @@
+<!-- TOP BAR -->
+<div class="topbar">
+  <span>📞 <a href="tel:+573145619608">+57 314 5619608</a></span>
+  <span>✉️ <a href="mailto:wimaketours@gmail.com">wimaketours@gmail.com</a></span>
+  <span>🏅 RNT 33425 – Operador Oficial Cerro Kennedy</span>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a class="logo" href="#">
+    <div class="logo-icon">🏔️</div>
+    <div class="logo-text">
+      <strong>Wi Make Tours</strong>
+      <small>Sierra Nevada · Santa Marta</small>
+    </div>
+  </a>
+  <ul class="nav-links" id="navLinks" [class.open]="isMenuOpen">
+    <li><a href="#inicio">Inicio</a></li>
+    <li><a href="#tours">Trekking</a></li>
+    <li><a href="#destinos">Destinos</a></li>
+    <li><a href="#nosotros">Quiénes Somos</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+    <li><a href="https://wa.me/573145619608" class="btn-reservar">📲 Reservar</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" (click)="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-bg"></div>
+
+  <div class="nube nube1"></div>
+  <div class="nube nube2"></div>
+  <div class="nube nube3"></div>
+
+  <svg class="montanas" viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <polygon points="0,320 0,180 220,60 440,200 660,80 880,220 1100,50 1320,180 1440,100 1440,320" fill="#145a32" opacity="0.9"/>
+    <polygon points="0,320 0,220 180,110 360,240 540,130 720,260 900,140 1080,260 1260,120 1440,200 1440,320" fill="#1a7a45" opacity="0.85"/>
+    <polygon points="0,320 0,280 240,200 480,300 720,220 960,300 1200,210 1440,280 1440,320" fill="#2ecc71" opacity="0.6"/>
+  </svg>
+
+  <div class="hero-content">
+    <div class="badge-rnt">🏅 Operador Oficial · RNT 33425</div>
+    <h1>Explora la <em>Sierra Nevada</em> de Santa Marta 🌿</h1>
+    <p>Trekking, aventura y cultura indígena en el corazón del mundo. Guías nativos y campesinos te llevan a experiencias únicas e inolvidables.</p>
+    <div class="hero-btns">
+      <a href="#tours" class="btn-principal">🗺️ Ver Paquetes</a>
+      <a href="https://wa.me/573145619608" class="btn-secundario">📲 WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TOURS ===== -->
+<section id="tours">
+  <div class="tours-header">
+    <div class="section-tag">🎒 Nuestros Paquetes</div>
+    <h2 class="section-title">¡Elige tu Aventura! 🌄</h2>
+    <p class="section-subtitle">Desde trekkings de un día hasta expediciones épicas de varios días. Tenemos la aventura perfecta para ti.</p>
+  </div>
+
+  <div class="tabs">
+    <button class="tab" [class.active]="currentFilter === 'todos'" (click)="filtrarTours('todos')">🌿 Todos</button>
+    <button class="tab" [class.active]="currentFilter === 'trekking'" (click)="filtrarTours('trekking')">🥾 Trekking</button>
+    <button class="tab" [class.active]="currentFilter === 'un-dia'" (click)="filtrarTours('un-dia')">☀️ Un Día</button>
+    <button class="tab" [class.active]="currentFilter === 'guajira'" (click)="filtrarTours('guajira')">🏜️ La Guajira</button>
+  </div>
+
+  <div class="tours-grid">
+    @for (tour of filteredTours; track tour.title) {
+      <div class="tour-card" [attr.data-cat]="tour.cat">
+        <div class="tour-img">
+          <div class="tour-img-bg" [style.background]="tour.bg"></div>
+          <span class="tour-icon-big">{{tour.icon}}</span>
+          @if (tour.badge) {
+            <span class="tour-badge">{{tour.badge}}</span>
+          }
+        </div>
+        <div class="tour-body">
+          <div class="tour-meta">
+            @for (meta of tour.meta; track meta) {
+              <span>{{meta}}</span>
+            }
+          </div>
+          <h3>{{tour.title}}</h3>
+          <p>{{tour.desc}}</p>
+          <div class="tour-footer">
+            <div class="tour-precio">
+              <small>Desde</small>
+              {{tour.precio}}
+            </div>
+            <a [href]="tour.waLink" class="btn-tour">📲 Reservar</a>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</section>
+
+<!-- ===== QUIÉNES SOMOS ===== -->
+<section id="nosotros" class="nosotros-section">
+
+  <!-- Hero imagen + título -->
+  <div class="nosotros-hero">
+    <div class="nosotros-hero-overlay">
+      <h2>🌿 Quiénes Somos</h2>
+      <p>Conoce la historia y el alma de Wi Make Tours</p>
+    </div>
+  </div>
+
+  <!-- Tabs de navegación -->
+  <div class="nosotros-tabs-wrapper">
+    <div class="nosotros-tabs">
+      <button class="nos-tab" [class.active]="nosotrosTab === 'quienes'" (click)="nosotrosTab = 'quienes'">¿Quiénes Somos?</button>
+      <button class="nos-tab" [class.active]="nosotrosTab === 'fundador'" (click)="nosotrosTab = 'fundador'">Fundador</button>
+      <button class="nos-tab" [class.active]="nosotrosTab === 'mision'" (click)="nosotrosTab = 'mision'">Misión y Visión</button>
+      <button class="nos-tab" [class.active]="nosotrosTab === 'valores'" (click)="nosotrosTab = 'valores'">Valores</button>
+      <button class="nos-tab" [class.active]="nosotrosTab === 'experiencias'" (click)="nosotrosTab = 'experiencias'">Experiencias</button>
+    </div>
+  </div>
+
+  <!-- Contenido de tabs -->
+  <div class="nosotros-content-wrapper">
+
+    @if (nosotrosTab === 'quienes') {
+      <div class="nos-panel">
+        <div class="nos-text-block">
+          <div class="nos-icon-big">🏔️</div>
+          <h3>Somos la Sierra Nevada</h3>
+          <p>
+            Somos una <strong>Agencia de viajes tour operadora</strong>, con <strong>RNT 33425</strong>,
+            radicada en la ciudad de <strong>Santa Marta, Colombia</strong>, que opera con guías campesinos
+            en la Sierra Nevada de Santa Marta, el Trekking al Cerro Kennedy, concesores de nuestro principal destino.
+            Y con las Comunidades Indígenas otros destinos turísticos.
+          </p>
+          <p>
+            El ecoturismo y el Etnoturismo es nuestra prioridad, realizamos actividades sostenibles,
+            aportando al desarrollo económico de las comunidades, manteniendo el respeto con el medio
+            ambiente, la cultura y las costumbres.
+          </p>
+          <p class="nos-highlight">
+            Somos una empresa netamente creada por un campesino de la Sierra Nevada de Santa Marta, que con
+            esfuerzo y dedicación, ha querido dar a conocer a nacionales y extranjeros parte de nuestra
+            cultura colombiana.
+          </p>
+          <p class="nos-slogan"><strong>Lo mejor de Colombia para el mundo 🌎</strong></p>
+        </div>
+        <div class="nos-badges-grid">
+          <div class="nos-badge-card">
+            <div class="nos-badge-icon">🏆</div>
+            <h4>RNT 33425</h4>
+            <p>Registro Nacional de Turismo oficial</p>
+          </div>
+          <div class="nos-badge-card">
+            <div class="nos-badge-icon">🌿</div>
+            <h4>Ecoturismo</h4>
+            <p>Turismo sostenible y responsable</p>
+          </div>
+          <div class="nos-badge-card">
+            <div class="nos-badge-icon">🧭</div>
+            <h4>Guías Nativos</h4>
+            <p>Campesinos e indígenas expertos</p>
+          </div>
+          <div class="nos-badge-card">
+            <div class="nos-badge-icon">❤️</div>
+            <h4>Anti ESCNNA</h4>
+            <p>Turismo ético que protege a la niñez</p>
+          </div>
+        </div>
+      </div>
+    }
+
+    @if (nosotrosTab === 'fundador') {
+      <div class="nos-panel nos-panel-fundador">
+        <div class="nos-fundador-avatar">
+          <div class="fundador-emoji">🧑‍🌾</div>
+        </div>
+        <div class="nos-text-block">
+          <div class="nos-tag">Fundador & CEO</div>
+          <h3>El corazón de Wi Make Tours</h3>
+          <p>
+            Wi Make Tours nació del sueño de un campesino de la Sierra Nevada de Santa Marta que quería
+            mostrarle al mundo la magia de su tierra natal. Con esfuerzo, dedicación y amor por su región,
+            construyó una agencia que hoy es reconocida a nivel nacional e internacional.
+          </p>
+          <p>
+            Como guía nativo, conoce cada sendero, cada comunidad indígena y cada secreto de la Sierra Nevada.
+            Su pasión es transmitir la cultura, la historia y la belleza de este rincón único de Colombia.
+          </p>
+          <ul class="fundador-list">
+            <li>✅ Más de 10 años de experiencia en turismo de aventura</li>
+            <li>✅ Guía certificado por el Ministerio de Comercio, Industria y Turismo</li>
+            <li>✅ Operador concesionario oficial del Cerro Kennedy</li>
+            <li>✅ Promotor del ecoturismo y la cultura indígena Kogui y Arhuaca</li>
+          </ul>
+        </div>
+      </div>
+    }
+
+    @if (nosotrosTab === 'mision') {
+      <div class="nos-panel nos-panel-mision">
+        <div class="mision-card">
+          <div class="mision-icon">🎯</div>
+          <h3>Misión</h3>
+          <p>
+            Ofrecer experiencias turísticas únicas, sostenibles y responsables en la Sierra Nevada de Santa Marta
+            y destinos del Caribe colombiano, conectando a los viajeros con la naturaleza, la cultura indígena y
+            las comunidades locales, generando desarrollo económico y respeto por el medio ambiente.
+          </p>
+        </div>
+        <div class="mision-card">
+          <div class="mision-icon">🔭</div>
+          <h3>Visión</h3>
+          <p>
+            Ser la agencia de turismo de aventura y ecoturismo más reconocida del Caribe colombiano para 2030,
+            destacada por la calidad de sus servicios, el impacto positivo en las comunidades y su contribución
+            a la conservación del patrimonio natural y cultural de la Sierra Nevada de Santa Marta.
+          </p>
+        </div>
+      </div>
+    }
+
+    @if (nosotrosTab === 'valores') {
+      <div class="nos-panel">
+        <div class="valores-grid">
+          <div class="valor-card">
+            <div class="valor-icon">🌿</div>
+            <h4>Sostenibilidad</h4>
+            <p>Turismo responsable que respeta la naturaleza y las comunidades ancestrales.</p>
+          </div>
+          <div class="valor-card">
+            <div class="valor-icon">🛡️</div>
+            <h4>Seguridad</h4>
+            <p>Equipos certificados, botiquín y protocolos de seguridad en cada aventura.</p>
+          </div>
+          <div class="valor-card">
+            <div class="valor-icon">🤝</div>
+            <h4>Respeto</h4>
+            <p>Respeto profundo por la cultura, las costumbres y los pueblos indígenas.</p>
+          </div>
+          <div class="valor-card">
+            <div class="valor-icon">💡</div>
+            <h4>Autenticidad</h4>
+            <p>Experiencias genuinas, guiadas por nativos que conocen cada rincón.</p>
+          </div>
+          <div class="valor-card">
+            <div class="valor-icon">❤️</div>
+            <h4>Compromiso Social</h4>
+            <p>Contra la explotación infantil. Turismo que protege a los más vulnerables.</p>
+          </div>
+          <div class="valor-card">
+            <div class="valor-icon">🌍</div>
+            <h4>Comunidad</h4>
+            <p>El turismo como motor de desarrollo económico local y social.</p>
+          </div>
+        </div>
+      </div>
+    }
+
+    @if (nosotrosTab === 'experiencias') {
+      <div class="nos-panel">
+        <div class="exp-intro">
+          <h3>Lo que dicen nuestros viajeros ⭐</h3>
+          <p>Más de 500 aventureros han confiado en nosotros. Aquí sus historias.</p>
+        </div>
+        <div class="exp-grid">
+          <div class="exp-card">
+            <div class="stars">★★★★★</div>
+            <blockquote>"El trekking al Cerro Kennedy fue la experiencia más increíble de mi vida. Los guías son fantásticos, conocen cada piedra de la Sierra. ¡100% recomendado!"</blockquote>
+            <div class="testi-author">
+              <div class="avatar">🧑</div>
+              <div>
+                <strong>Carlos M.</strong>
+                <small>Bogotá · Trek Cerro Kennedy 2D</small>
+              </div>
+            </div>
+          </div>
+          <div class="exp-card">
+            <div class="stars">★★★★★</div>
+            <blockquote>"Hicimos Ciudad Perdida con Wi Make Tours y fue mágico. La organización, la comida, los guías bilingües... todo perfecto. Los mejores de Santa Marta."</blockquote>
+            <div class="testi-author">
+              <div class="avatar">👩</div>
+              <div>
+                <strong>Sarah L.</strong>
+                <small>London, UK · Ciudad Perdida 4D</small>
+              </div>
+            </div>
+          </div>
+          <div class="exp-card">
+            <div class="stars">★★★★★</div>
+            <blockquote>"La Guajira con ellos fue simplemente alucinante. Ver el amanecer en Cabo de la Vela es algo que no olvidaré jamás. Profesionales de verdad."</blockquote>
+            <div class="testi-author">
+              <div class="avatar">🧔</div>
+              <div>
+                <strong>Andrés R.</strong>
+                <small>Medellín · Cabo de la Vela</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+
+  </div>
+</section>
+
+<!-- ===== DESTINOS ===== -->
+<section id="destinos">
+  <div class="destinos-inner">
+    <div class="section-tag">📍 Destinos Mágicos</div>
+    <h2 class="section-title">Colombia te Espera 🇨🇴</h2>
+    <p class="section-subtitle">Desde la Sierra Nevada hasta los desiertos de La Guajira. Explora los paisajes más impresionantes del Caribe colombiano.</p>
+
+    <div class="destinos-grid">
+      <div class="destino-card">
+        <div class="destino-bg" style="background: linear-gradient(135deg,#a8edbb,#2ecc71);">🏔️</div>
+        <div class="destino-overlay">
+          <h3>Sierra Nevada de Santa Marta</h3>
+          <p>🌿 La montaña costera más alta del mundo · Cultura Kogui</p>
+        </div>
+      </div>
+      <div class="destino-card">
+        <div class="destino-bg" style="background: linear-gradient(135deg,#fff9c4,#f9a825);">🏛️</div>
+        <div class="destino-overlay">
+          <h3>Ciudad Perdida</h3>
+          <p>🗺️ Tesoro ancestral Tayrona · Joya arqueológica de Colombia</p>
+        </div>
+      </div>
+      <div class="destino-card">
+        <div class="destino-bg" style="background: linear-gradient(135deg,#fff3e0,#ff7043);">🏜️</div>
+        <div class="destino-overlay">
+          <h3>La Guajira</h3>
+          <p>☀️ Desiertos, Cabo de la Vela, Punta Gallinas · Cultura Wayú</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIOS ===== -->
+<section id="testimonios">
+  <div class="testimonios-inner">
+    <div class="section-tag">💬 Lo que Dicen</div>
+    <h2 class="section-title">Aventureros Felices 🌟</h2>
+    <p class="section-subtitle">Miles de viajeros han vivido experiencias únicas con Wi Make Tours. ¡Tu aventura te está esperando!</p>
+
+    <div class="testimonios-grid">
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"El trekking al Cerro Kennedy fue la experiencia más increíble de mi vida. Los guías son fantásticos, conocen cada piedra de la Sierra. ¡100% recomendado!"</blockquote>
+        <div class="testi-author">
+          <div class="avatar">🧑</div>
+          <div>
+            <strong>Carlos M.</strong>
+            <small>Bogotá, Colombia · Trek Cerro Kennedy 2D</small>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Hicimos Ciudad Perdida con Wi Make Tours y fue mágico. La organización, la comida, los guías bilingües... todo perfecto. Los mejores de Santa Marta."</blockquote>
+        <div class="testi-author">
+          <div class="avatar">👩</div>
+          <div>
+            <strong>Sarah L.</strong>
+            <small>London, UK · Ciudad Perdida 4D</small>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"La Guajira con ellos fue simplemente alucinante. Ver el amanecer en Cabo de la Vela es algo que no olvidaré jamás. Profesionales de verdad."</blockquote>
+        <div class="testi-author">
+          <div class="avatar">🧔</div>
+          <div>
+            <strong>Andrés R.</strong>
+            <small>Medellín, Colombia · Cabo de la Vela</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACTO ===== -->
+<section id="contacto">
+  <div class="contacto-inner">
+    <div class="contacto-info">
+      <div class="section-tag">📬 Contáctanos</div>
+      <h2 class="section-title">¡Planea tu Aventura! 🎒</h2>
+      <p class="section-subtitle">¿Listo para vivir la experiencia de tu vida en la Sierra Nevada? Escríbenos y armamos el tour perfecto para ti.</p>
+
+      <div class="contact-items">
+        <a href="https://wa.me/573145619608" class="contact-item">
+          <div class="ci-icon ci-wa">📱</div>
+          WhatsApp: +57 314 5619608
+        </a>
+        <a href="mailto:wimaketours@gmail.com" class="contact-item">
+          <div class="ci-icon ci-mail">✉️</div>
+          wimaketours@gmail.com
+        </a>
+        <a href="https://es-es.facebook.com/wimaketours/" class="contact-item">
+          <div class="ci-icon ci-fb">📘</div>
+          Facebook: @wimaketours
+        </a>
+        <a href="https://www.instagram.com/wimaketours/" class="contact-item">
+          <div class="ci-icon ci-ig">📸</div>
+          Instagram: @wimaketours
+        </a>
+      </div>
+
+      <div class="social-btns">
+        <a href="https://es-es.facebook.com/wimaketours/" class="social-btn sb-fb">📘 Facebook</a>
+        <a href="https://www.instagram.com/wimaketours/" class="social-btn sb-ig">📸 Instagram</a>
+        <a href="https://wa.me/573145619608" class="social-btn sb-wa">💬 WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="contacto-form">
+      <h3>📩 Consulta un Tour</h3>
+      <div class="form-group">
+        <label>Tu Nombre</label>
+        <input type="text" placeholder="Ej: María García" #nombreInput>
+      </div>
+      <div class="form-group">
+        <label>WhatsApp / Teléfono</label>
+        <input type="tel" placeholder="+57 300 000 0000">
+      </div>
+      <div class="form-group">
+        <label>¿Qué tour te interesa?</label>
+        <select #tourSelect>
+          <option value="">Selecciona un paquete...</option>
+          <option>🏔️ Trek Cerro Kennedy 2D 1N</option>
+          <option>⛺ Trek Cerro Kennedy 3D 2N</option>
+          <option>🏛️ Ciudad Perdida 4 Días</option>
+          <option>⚡ Cerro Kennedy Extremo 1 Día</option>
+          <option>🌊 Aventura Río Don Diego</option>
+          <option>🌿 Full Day San Lorenzo</option>
+          <option>🏜️ Cabo de la Vela 2D</option>
+          <option>🌅 Punta Gallinas 3D</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Fecha aproximada</label>
+        <input type="date">
+      </div>
+      <div class="form-group">
+        <label>¿Cuántas personas?</label>
+        <select>
+          <option>1 persona</option>
+          <option>2 personas</option>
+          <option>3–5 personas</option>
+          <option>6–10 personas</option>
+          <option>Grupo grande (+10)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Mensaje (opcional)</label>
+        <textarea placeholder="Cuéntanos algo sobre tu aventura ideal..."></textarea>
+      </div>
+      <button class="btn-enviar" (click)="enviarWA(nombreInput.value, tourSelect.value)">🚀 Enviar por WhatsApp</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-links">
+    <a href="#">Inicio</a>
+    <a href="#tours">Nuestros Tours</a>
+    <a href="#nosotros">Quiénes Somos</a>
+    <a href="#contacto">Contacto</a>
+    <a href="https://wimaketours.com/en/">🇬🇧 English</a>
+  </div>
+  <p>© 2025 <strong>Wi Make Tours</strong> · Operador Oficial Cerro Kennedy · RNT 33425</p>
+  <p style="margin-top:8px; font-size:12px; opacity:0.6;">Hecho con ❤️ en la Sierra Nevada de Santa Marta, Colombia 🇨🇴</p>
+</footer>
+
+<!-- WhatsApp Flotante -->
+<a href="https://wa.me/573145619608?text=Hola!%20Quiero%20informaci%C3%B3n%20sobre%20los%20tours" class="wa-float" title="Escríbenos por WhatsApp">💬</a>

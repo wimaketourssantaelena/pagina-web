@@ -1,0 +1,228 @@
+.contacto-section {
+  background: linear-gradient(135deg, #fffde7, #e8f5e9);
+  padding: 80px 40px;
+  border-top: 4px dashed var(--verde);
+}
+.contacto-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+.contacto-info .section-title {
+  margin-bottom: 8px;
+}
+.contacto-info .section-subtitle {
+  margin-bottom: 32px;
+}
+.contact-items {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 32px;
+}
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background: #fff;
+  border-radius: 16px;
+  border: 2px solid #e0f2e9;
+  font-weight: 700;
+  color: var(--verde-oscuro);
+  font-size: 15px;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+.contact-item:hover {
+  border-color: var(--verde);
+  box-shadow: 4px 4px 0 var(--verde);
+  transform: translate(-2px, -2px);
+}
+.ci-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+.ci-wa {
+  background: #25d366;
+}
+.ci-phone {
+  background: var(--verde);
+}
+.ci-mail {
+  background: #ea4335;
+}
+.ci-fb {
+  background: #1877f2;
+}
+.ci-ig {
+  background: linear-gradient(
+    45deg,
+    #feda75,
+    #fa7e1e,
+    #d62976,
+    #962fbf,
+    #4f5bd5
+  );
+}
+.ci-tt {
+  background: #000;
+}
+.tt-logo,
+.brand-ic {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+.social-btn .tt-logo,
+.social-btn .brand-ic {
+  width: 18px;
+  height: 18px;
+}
+.social-btns {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.social-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 14px;
+  border: 2.5px solid;
+  transition: all 0.2s;
+}
+.social-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 4px 4px;
+}
+.sb-fb {
+  background: #1877f2;
+  color: #fff;
+  border-color: #0d5dbf;
+}
+.sb-fb:hover {
+  box-shadow: 4px 4px #0d5dbf;
+}
+.sb-ig {
+  background: linear-gradient(
+    135deg,
+    #f09433,
+    #e6683c,
+    #dc2743,
+    #cc2366,
+    #bc1888
+  );
+  color: #fff;
+  border-color: #8e1c5e;
+}
+.sb-ig:hover {
+  box-shadow: 4px 4px #8e1c5e;
+}
+.sb-tt {
+  background: #000;
+  color: #fff;
+  border-color: #25f4ee;
+}
+.sb-tt:hover {
+  box-shadow: 4px 4px #25f4ee;
+}
+.sb-wa {
+  background: #25d366;
+  color: #fff;
+  border-color: #128c4e;
+}
+.sb-wa:hover {
+  box-shadow: 4px 4px #128c4e;
+}
+.contacto-form {
+  background: #fff;
+  border-radius: 24px;
+  padding: 36px;
+  border: 3px solid var(--verde);
+  box-shadow: 8px 8px 0 var(--verde-oscuro);
+}
+.contacto-form h3 {
+  font-family:
+    Fredoka One,
+    cursive;
+  font-size: 24px;
+  color: var(--verde-oscuro);
+  margin-bottom: 24px;
+}
+.form-group {
+  margin-bottom: 18px;
+}
+.form-group label {
+  display: block;
+  font-weight: 800;
+  font-size: 14px;
+  color: var(--verde-oscuro);
+  margin-bottom: 6px;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2.5px solid #c8e6c9;
+  border-radius: 12px;
+  font-family: Nunito, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  background: #fafffe;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--verde);
+  box-shadow: 0 0 0 3px #2ecc7126;
+}
+.form-group textarea {
+  height: 100px;
+  resize: vertical;
+}
+.btn-enviar {
+  width: 100%;
+  background: var(--naranja-vivo);
+  color: #fff;
+  font-family:
+    Fredoka One,
+    cursive;
+  font-size: 20px;
+  padding: 14px;
+  border-radius: 50px;
+  border: 3px solid #c0392b;
+  box-shadow: 5px 5px #c0392b;
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 0.5px;
+}
+.btn-enviar:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 8px 8px #c0392b;
+}
+@media (max-width: 900px) {
+  .contacto-section {
+    padding: 60px 24px;
+  }
+  .contacto-inner {
+    grid-template-columns: 1fr;
+  }
+}

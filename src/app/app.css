@@ -1,0 +1,63 @@
+/* ===== VARIABLES GLOBALES ===== */
+
+:root {
+  --verde: #b87333;
+  --verde-oscuro: #8a4f1f;
+  --verde-bosque: #1c1813;
+  --naranja: #e6952e;
+  --naranja-vivo: #f0a838;
+  --tierra: #a86a2a;
+  --crema: #fbf6ee;
+  --gris-suave: #f4f4f4;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: Nunito, sans-serif;
+  background: var(--crema);
+  overflow-x: hidden;
+}
+.wa-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 62px;
+  height: 62px;
+  background: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  text-decoration: none;
+  box-shadow: 0 4px 20px #25d36680;
+  border: 3px solid white;
+  z-index: 9999;
+  animation: pulseWA 2s infinite;
+  transition: transform 0.2s;
+}
+.wa-float:hover {
+  transform: scale(1.15);
+}
+.wa-float-ic {
+  width: 34px;
+  height: 34px;
+  display: block;
+}
+@keyframes pulseWA {
+  0%,
+  to {
+    box-shadow: 0 4px 20px #25d36680;
+  }
+  50% {
+    box-shadow:
+      0 4px 40px #25d366cc,
+      0 0 0 12px #25d3661a;
+  }
+}

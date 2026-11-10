@@ -1,0 +1,27 @@
+<div class="lang" [class.open]="open()">
+  <button type="button" class="lang-btn" (click)="toggle()" (keydown)="onButtonKey($event)"
+          aria-haspopup="listbox" [attr.aria-expanded]="open()" aria-controls="lang-list"
+          [attr.aria-label]="('NAVBAR.LANGUAGE' | translate) + ': ' + current().name">
+    <img class="flag" [src]="current().flag" alt="" width="20" height="14">
+    <span>{{ current().label }}</span>
+    <svg class="chevron" viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1.5 6 6.5 11 1.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+
+  @if (open()) {
+    <ul id="lang-list" class="lang-list" role="listbox" [attr.aria-label]="'NAVBAR.LANGUAGE' | translate"
+        (keydown)="onListKey($event)">
+      @for (l of langs; track l.code; let i = $index) {
+        <li class="lang-option" role="option" tabindex="-1" [id]="'lang-opt-' + l.code"
+            [class.active]="l.code === current().code" [attr.aria-selected]="l.code === current().code"
+            [attr.lang]="l.code" (click)="choose(l.code)" (mouseenter)="focused.set(i)">
+          <img class="flag" [src]="l.flag" alt="" width="20" height="14">
+          <span class="code">{{ l.label }}</span>
+          <span class="name">{{ l.name }}</span>
+          @if (l.code === current().code) {
+            <svg class="check" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5 6.5 12 13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          }
+        </li>
+      }
+    </ul>
+  }
+</div>

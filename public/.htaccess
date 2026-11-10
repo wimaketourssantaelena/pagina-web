@@ -1,0 +1,9 @@
+RewriteEngine On
+# If an existing asset or directory is requested go to it as it is
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d
+RewriteRule ^ - [L]
+
+# If any other extension is requested and it is not index.html (to avoid infinite loop)
+# redirect it to index.html
+RewriteRule ^ /index.html [L]

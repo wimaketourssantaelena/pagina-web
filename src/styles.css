@@ -1,0 +1,130 @@
+/* ==========================================
+   ESTILOS GLOBALES - Wi Make Tours Angular
+   ========================================== */
+
+/* === Variables de color === */
+:root {
+  --verde: #b87333;
+  --verde-oscuro: #8a4f1f;
+  --verde-bosque: #1c1813;
+  --naranja: #e6952e;
+  --naranja-vivo: #f0a838;
+  --tierra: #a86a2a;
+  --crema: #fbf6ee;
+  --gris-suave: #f4f4f4;
+  --sombra: rgba(0,0,0,0.15);
+  /* Paleta del rediseño (cabecera, hero y franja de valores) */
+  --marron: #6b3410;
+  --marron-oscuro: #3a2414;
+  --marron-claro: #8a5a2b;
+  --beige: #f2ede3;
+  --verde-hoja: #3f5f2a;
+}
+
+/* === Reset === */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+/* que la cabecera fija no tape las secciones al saltar a ellas */
+section[id] { scroll-margin-top: 140px; }
+
+body {
+  font-family: 'Nunito', 'Helvetica Neue', sans-serif;
+  background: var(--crema);
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* === Clases compartidas entre componentes === */
+.section-tag {
+  display: inline-block;
+  background: var(--verde);
+  color: white;
+  font-weight: 800;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 5px 16px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .section-tag {
+    font-size: 12px;
+    letter-spacing: 1px;
+    padding: 6px 14px;
+  }
+}
+
+.section-title {
+  font-family: 'Fredoka One', cursive;
+  font-size: clamp(30px, 4vw, 48px);
+  color: var(--verde-oscuro);
+  margin-bottom: 12px;
+  line-height: 1.1;
+}
+
+.section-subtitle {
+  margin-left: 34%;
+  color: #555;
+  font-size: 16px;
+  font-weight: 600;
+  max-width: 580px;
+  line-height: 1.6;
+  margin-bottom: 48px;
+}
+
+/* Stars y author compartido */
+.stars { color: #f39c12; font-size: 18px; letter-spacing: 2px; margin-bottom: 12px; }
+.testi-author { display: flex; align-items: center; gap: 12px; margin-top: 16px; }
+.testi-author strong { display: block; font-weight: 800; color: var(--verde-oscuro); font-size: 14px; }
+.testi-author small { color: #888; font-size: 12px; font-weight: 700; display: block; }
+.avatar {
+  width: 46px; height: 46px; border-radius: 50%;
+  background: var(--verde); display: flex; align-items: center;
+  justify-content: center; font-size: 22px;
+  border: 3px solid var(--verde-oscuro); flex-shrink: 0;
+}
+
+/* Botones globales */
+.btn-principal {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--naranja-vivo); color: white;
+  font-family: 'Fredoka One', cursive; font-size: 18px;
+  padding: 14px 32px; border-radius: 50px;
+  text-decoration: none; border: 3px solid #c0392b;
+  box-shadow: 5px 5px 0 #c0392b; transition: all 0.2s;
+}
+.btn-principal:hover { transform: translate(-3px,-3px); box-shadow: 8px 8px 0 #c0392b; }
+
+.btn-secundario {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: white; color: var(--verde-oscuro);
+  font-family: 'Fredoka One', cursive; font-size: 18px;
+  padding: 14px 32px; border-radius: 50px;
+  text-decoration: none; border: 3px solid var(--verde-oscuro);
+  box-shadow: 5px 5px 0 var(--verde-oscuro); transition: all 0.2s;
+}
+.btn-secundario:hover { transform: translate(-3px,-3px); box-shadow: 8px 8px 0 var(--verde-oscuro); }
+
+/* Icono de WhatsApp dentro de los botones */
+.wa-btn-ic { width: 22px; height: 22px; flex-shrink: 0; }
+
+/* WhatsApp flotante global */
+.wa-float {
+  position: fixed; bottom: 28px; right: 28px;
+  width: 62px; height: 62px;
+  background: #25d366; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 30px; text-decoration: none;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.5);
+  border: 3px solid white; z-index: 9999;
+  animation: pulseWA 2s infinite; transition: transform 0.2s;
+}
+.wa-float:hover { transform: scale(1.15); }
+@keyframes pulseWA {
+  0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.5); }
+  50%       { box-shadow: 0 4px 40px rgba(37,211,102,0.8), 0 0 0 12px rgba(37,211,102,0.1); }
+}

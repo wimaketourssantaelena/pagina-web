@@ -1,0 +1,61 @@
+<section id="tours" class="tours-section">
+  <div class="tours-header">
+    <div class="section-tag">{{ 'TOURS.TAG' | translate }}</div>
+    <h2 class="section-title">{{ 'TOURS.TITLE' | translate }}</h2>
+    <p class="section-subtitle">{{ 'TOURS.SUBTITLE' | translate }}</p>
+  </div>
+
+  <div class="tabs">
+    <button class="tab" [class.active]="currentFilter==='todos'"    (click)="filtrar('todos')">{{ 'TOURS.TABS.ALL' | translate }}</button>
+    <button class="tab" [class.active]="currentFilter==='trekking'" (click)="filtrar('trekking')">{{ 'TOURS.TABS.TREKKING' | translate }}</button>
+    <button class="tab" [class.active]="currentFilter==='un-dia'"   (click)="filtrar('un-dia')">{{ 'TOURS.TABS.ONE_DAY' | translate }}</button>
+    <button class="tab" [class.active]="currentFilter==='guajira'"  (click)="filtrar('guajira')">{{ 'TOURS.TABS.GUAJIRA' | translate }}</button>
+  </div>
+
+  <div class="tours-grid">
+    @for (tour of filteredTours; track tour.id) {
+      <div class="tour-card">
+        <div class="tour-img">
+          @if (hasCarousel(tour.id)) {
+            <!-- Mini carrusel de fotos de la tarjeta -->
+            @for (img of getImages(tour.id); track img; let i = $index) {
+              <div class="card-slide"
+                   [class.active]="i === getSlide(tour.id)"
+                   [style.backgroundImage]="'url(' + img + ')'"></div>
+            }
+            <div class="card-dots">
+              @for (img of getImages(tour.id); track img; let i = $index) {
+                <span class="card-dot" [class.active]="i === getSlide(tour.id)"></span>
+              }
+            </div>
+          } @else {
+            <div class="tour-img-bg"
+                 [style.background]="tour.fullImg ? 'url(' + tour.fullImg + ') center/cover' : tour.bg">
+            </div>
+            @if (!tour.fullImg) {
+              <span class="tour-icon-big">{{tour.icon}}</span>
+            }
+          }
+          @if (tour.badge) { <span class="tour-badge">{{tour.badge}}</span> }
+        </div>
+        <div class="tour-body">
+          <div class="tour-meta">
+            @for (m of tour.meta; track m) { <span>{{m}}</span> }
+          </div>
+          <h3>{{tour.title}}</h3>
+          <p>{{tour.desc}}</p>
+          <div class="tour-footer">
+            <div class="tour-precio">
+              <small>{{ 'TOURS.CARD.FROM' | translate }}</small>
+              <strong>{{tour.precio}}</strong>
+            </div>
+            <div class="tour-actions">
+              <a [routerLink]="['/tour', tour.id]" class="btn-ver-mas">{{ 'TOURS.CARD.ITINERARY' | translate }}</a>
+              <a [href]="tour.waLink" class="btn-tour" target="_blank">{{ 'TOURS.CARD.BOOK' | translate }}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</section>

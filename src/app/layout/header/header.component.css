@@ -1,0 +1,438 @@
+/* =========================================
+   HEADER - layout/header (diseño de referencia)
+   ========================================= */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #fff;
+  border-top: 8px solid var(--marron);
+  box-shadow: 0 2px 14px #0000001a;
+}
+.header-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 10px 40px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+/* --- Marca --- */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  text-decoration: none;
+  padding-bottom: 10px;
+}
+.logo-img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.logo-text {
+  line-height: 1.05;
+}
+.logo-text strong {
+  display: block;
+  font-family: "Fredoka", "Fredoka One", sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  color: var(--marron);
+  letter-spacing: 0.5px;
+}
+.logo-text small {
+  display: block;
+  margin-top: 10px;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--marron-claro);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* --- Lado derecho --- */
+.header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 14px;
+}
+.header-top {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+.header-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  color: var(--marron-oscuro);
+}
+.header-contact a,
+.header-contact span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: inherit;
+  text-decoration: none;
+}
+.header-contact a:hover {
+  color: var(--naranja);
+}
+.header-contact svg {
+  width: 15px;
+  height: 15px;
+  color: var(--marron);
+  flex-shrink: 0;
+}
+.header-social {
+  display: flex;
+  gap: 12px;
+}
+.header-social a {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--marron);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+.header-social a:hover {
+  background: var(--naranja);
+  transform: translateY(-2px);
+}
+.header-social svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* --- Hamburguesa (solo en pantallas estrechas) --- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  padding: 6px;
+}
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background: var(--marron-oscuro);
+  border-radius: 2px;
+  transition: transform 0.25s, opacity 0.25s;
+}
+.hamburger.open span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* --- Menú dentro de la cabecera, bajo el correo y el RNT (enlaces de 163b218) --- */
+.main-nav {
+  display: flex;
+}
+.nav-links {
+  display: flex;
+  gap: 2px;
+  list-style: none;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  /* Ajuste de David en el inspector: sin justify-content en .main-nav y margin-left: 18 % aquí. En pantallas más justas se reduce */
+  margin-left: 18%;
+}
+@media (min-width: 1251px) and (max-width: 1500px) {
+  .nav-links {
+    margin-left: 5%;
+  }
+}
+.menu-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.menu-item > a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 12px 14px;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--marron-oscuro);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+.menu-item > a::after {
+  content: "";
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 6px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--naranja);
+  transform: scaleX(0);
+  transition: transform 0.25s;
+}
+.menu-item > a:hover,
+.menu-item > a.active {
+  color: var(--naranja);
+}
+.menu-item > a:hover::after,
+.menu-item > a.active::after {
+  transform: scaleX(1);
+}
+.arrow {
+  font-size: 8px;
+  opacity: 0.7;
+}
+.sub-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 10;
+  background: #fff;
+  min-width: 250px;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  box-shadow: 0 10px 30px #00000026;
+  border-radius: 0 0 14px 14px;
+  border-top: 3px solid var(--naranja);
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.25s ease;
+}
+.menu-item:hover .sub-menu {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+.sub-menu li a {
+  display: block;
+  padding: 11px 20px;
+  font-family: "Poppins", sans-serif;
+  color: var(--marron-oscuro);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.3;
+  transition: all 0.2s;
+}
+.sub-menu li a:hover {
+  background: #fbf3e8;
+  color: var(--naranja);
+  padding-left: 25px;
+}
+.lang-item {
+  margin: 0 4px 8px 8px;
+}
+.lang-select {
+  background: #fff;
+  color: var(--marron-oscuro);
+  border: 1px solid #e3d3bf;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.lang-select:hover,
+.lang-select:focus {
+  border-color: var(--naranja);
+}
+.lang-select option {
+  background: #fff;
+  color: var(--marron-oscuro);
+}
+.menu-item > a.btn-reservar {
+  margin: 0 0 8px 6px;
+  padding: 7px 18px;
+  border-radius: 6px;
+  background: var(--naranja);
+  color: #fff;
+  font-weight: 600;
+}
+.menu-item > a.btn-reservar::after {
+  display: none;
+}
+.menu-item > a.btn-reservar:hover {
+  background: var(--marron);
+  color: #fff;
+}
+
+/* --- Pantallas medianas y móviles --- */
+@media (max-width: 1300px) {
+  .menu-item > a {
+    padding: 8px 8px 14px;
+    font-size: 13px;
+  }
+  .menu-item > a::after {
+    left: 8px;
+    right: 8px;
+  }
+}
+@media (max-width: 1100px) {
+  .header-inner {
+    padding: 10px 20px 0;
+  }
+  .header-top {
+    gap: 24px;
+  }
+  .header-contact {
+    display: none;
+  }
+}
+/* Por debajo de 1250 px (no cabe junto a la marca) el menú se pliega en la hamburguesa: panel bajo la cabecera */
+@media (max-width: 1250px) {
+  .hamburger {
+    display: flex;
+  }
+  .header-inner {
+    padding-bottom: 10px;
+  }
+  .main-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: block;
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    max-height: calc(100vh - 140px);
+    overflow-y: auto;
+    margin-left: 0;
+    padding: 6px 20px 18px;
+    background: #fff;
+    border-top: 3px solid var(--naranja);
+    box-shadow: 0 12px 30px #00000026;
+  }
+  .nav-links.open {
+    display: flex;
+  }
+  .menu-item {
+    flex-direction: column;
+    align-items: stretch;
+    border-bottom: 1px solid #eee5d8;
+  }
+  .menu-item > a {
+    padding: 14px 4px;
+    font-size: 15px;
+    white-space: normal;
+  }
+  .menu-item > a::after {
+    display: none;
+  }
+  .sub-menu {
+    position: static;
+    display: none;
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    min-width: 0;
+    padding: 0 0 10px 16px;
+    background: #fdf8f1;
+  }
+  .menu-item:hover .sub-menu {
+    display: block;
+  }
+  .sub-menu li a {
+    overflow-wrap: anywhere;
+  }
+  .lang-item {
+    margin: 0;
+    padding: 12px 4px;
+    align-items: flex-start;
+  }
+  .menu-item:last-child {
+    border-bottom: 0;
+    align-items: flex-start;
+  }
+  .menu-item > a.btn-reservar {
+    margin: 14px 0 0;
+    padding: 10px 22px;
+  }
+}
+@media (max-width: 900px) {
+  .header-inner {
+    padding-bottom: 10px;
+  }
+  .logo {
+    padding-bottom: 0;
+  }
+  .logo-img {
+    width: 70px;
+    height: 70px;
+  }
+  .logo-text strong {
+    font-size: 20px;
+  }
+  .logo-text small {
+    font-size: 10px;
+    margin-top: 6px;
+  }
+}
+@media (max-width: 600px) {
+  .header-inner {
+    padding: 8px 16px;
+    gap: 12px;
+  }
+  .header-social {
+    display: none;
+  }
+  .logo {
+    gap: 10px;
+    min-width: 0;
+  }
+  .logo-img {
+    width: 56px;
+    height: 56px;
+  }
+  .logo-text {
+    min-width: 0;
+  }
+  .logo-text strong {
+    font-size: 16px;
+  }
+  .logo-text small {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+  .sub-menu li a {
+    overflow-wrap: anywhere;
+  }
+}

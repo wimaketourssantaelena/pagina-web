@@ -1,0 +1,130 @@
+/* Navbar CSS */
+.topbar {
+  background: var(--verde-oscuro);
+  color: white;
+  text-align: center;
+  padding: 8px 20px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.topbar a { color: #ffe67a; text-decoration: none; }
+.topbar span { display: flex; align-items: center; gap: 6px; }
+
+nav {
+  background: white;
+  padding: 14px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 3px 20px rgba(46,204,113,0.2);
+  border-bottom: 3px solid var(--verde);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+.logo-icon {
+  width: 54px;
+  height: 54px;
+  background: var(--verde);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  border: 3px solid var(--verde-oscuro);
+  box-shadow: 3px 3px 0 var(--verde-oscuro);
+  transition: transform 0.3s;
+}
+.logo:hover .logo-icon { transform: rotate(-10deg) scale(1.1); }
+.logo-text { line-height: 1.1; }
+.logo-text strong {
+  display: block;
+  font-family: 'Fredoka One', cursive;
+  font-size: 22px;
+  color: var(--verde-oscuro);
+  letter-spacing: 1px;
+}
+.logo-text small {
+  font-size: 10px;
+  color: var(--tierra);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 6px;
+  list-style: none;
+  align-items: center;
+}
+.nav-links a {
+  text-decoration: none;
+  color: var(--verde-oscuro);
+  font-weight: 700;
+  font-size: 14px;
+  padding: 8px 14px;
+  border-radius: 25px;
+  transition: all 0.3s;
+}
+.nav-links a:hover {
+  background: var(--verde);
+  color: white;
+  transform: translateY(-2px);
+}
+.nav-links .btn-reservar {
+  background: var(--naranja-vivo);
+  color: white !important;
+  border: 3px solid #c0392b;
+  box-shadow: 3px 3px 0 #c0392b;
+}
+.nav-links .btn-reservar:hover {
+  transform: translate(-2px,-2px) !important;
+  box-shadow: 5px 5px 0 #c0392b;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 6px;
+}
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background: var(--verde-oscuro);
+  border-radius: 3px;
+  transition: all 0.3s;
+}
+
+@media (max-width: 900px) {
+  nav { padding: 12px 20px; }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 20px;
+    gap: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-top: 3px solid var(--verde);
+  }
+  .nav-links.open { display: flex !important; }
+  .hamburger { display: flex !important; }
+}

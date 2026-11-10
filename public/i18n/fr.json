@@ -1,0 +1,229 @@
+{
+  "NATURE": {
+    "TITLE": "La nature comme vous ne l'avez jamais vue",
+    "DESC": "Laissez-vous surprendre par la rapidité du colibri, le puissant cri du singe hurleur, le chant de la perruche, et découvrez une faune et une flore endémiques aussi variées que colorées. Grâce à son écosystème varié, qui s'étend de la mer des Caraïbes à la forêt tropicale humide en passant par le páramo de montagne, la Sierra Nevada abrite des animaux et des plantes exotiques qui émerveilleront les amoureux de la nature."
+  },
+  "TOPBAR": {
+    "RNT": "🏅 RNT 280360 – Opérateur Officiel Cerro Kennedy"
+  },
+  "NAVBAR": {
+    "HOME": "Accueil",
+    "TREKKING": "Trekking Sierra Nevada",
+    "ONE_DAY": "Excursion d'une journée",
+    "GUAJIRA": "La Guajira",
+    "ABOUT": "Qui sommes-nous",
+    "CONTACT": "Contact",
+    "BOOK": "📲 Réserver",
+    "ABOUT_SHORT": "Qui sommes-nous",
+    "EXPERIENCES": "Expériences",
+    "GALLERY": "Galerie",
+    "PACKAGES": "Forfaits",
+    "CONTACT_SHORT": "Contact",
+    "MENU": "Menu",
+    "LANGUAGE": "Langue"
+  },
+  "HERO": {
+    "DISCOVER": "Vivez",
+    "REGION": "Sierra Nevada de Santa Marta",
+    "TAGLINE": "Marchez, contemplez et connectez-vous à l'âme de la Sierra Nevada",
+    "CTA": "Voir les forfaits",
+    "NOTE": "De nos racines à votre cœur.",
+    "BADGE": "🏅 Opérateur Officiel · RNT 280360",
+    "TITLE_HTML": "Explorez <em>Cerro Kennedy</em> Sierra Nevada de Santa Marta 🌿",
+    "DESC": "Trekking, aventure et culture indigène au cœur du monde. Des guides natifs et paysans vous emmènent vers des expériences uniques et inoubliables.",
+    "BTNS": {
+      "PACKAGES": "🗺️ Voir les forfaits",
+      "WHATSAPP": "WhatsApp"
+    }
+  },
+  "HEADER": {
+    "RNT": "RNT 280360 - Opérateur Officiel Cerro Kennedy"
+  },
+  "VALORES": {
+    "RESPONSIBLE": "Tourisme responsable et durable",
+    "COMMUNITIES": "Soutien aux communautés locales",
+    "GUIDES": "Guides paysans de la région",
+    "AUTHENTIC": "Expériences authentiques et inoubliables"
+  },
+  "STATS": {
+    "HAPPY": "🧳 Aventuriers heureux",
+    "ROUTES": "🏔️ Itinéraires uniques",
+    "RATING": "🌟 Note Google",
+    "SINCE": "📅 Depuis l'année"
+  },
+  "TOURS": {
+    "TAG": "Opérateur officiel du trekking vers le Cerro Kennedy avec plus de 15 ans d'expérience sur notre territoire, reliant les voyageurs à notre cœur.",
+    "TITLE": "Choisissez votre aventure ! 🌄",
+    "SUBTITLE": "Des treks d'une journée aux expéditions épiques de plusieurs jours.",
+    "TABS": {
+      "ALL": "🌿 Tous",
+      "TREKKING": "🥾 Trekking",
+      "ONE_DAY": "☀️ Une journée",
+      "GUAJIRA": "🏜️ La Guajira"
+    },
+    "CARD": {
+      "FROM": "À partir de",
+      "ITINERARY": "🗺️ Voir l'itinéraire",
+      "BOOK": "📲 Réserver"
+    }
+  },
+  "DESTINOS": {
+    "TAG": "📍 Destinations magiques",
+    "TITLE": "La Colombie vous attend 🇨🇴",
+    "SUBTITLE": "De la Sierra Nevada aux déserts de La Guajira.",
+    "SIERRA": {
+      "TITLE": "Sierra Nevada de Santa Marta",
+      "DESC": "🌿 La plus haute montagne côtière du monde · Culture Kogui"
+    },
+    "PERDIDA": {
+      "TITLE": "Cité Perdue",
+      "DESC": "🗺️ Trésor ancestral Tayrona · Joyau archéologique de la Colombie"
+    },
+    "GUAJIRA": {
+      "TITLE": "La Guajira",
+      "DESC": "☀️ Déserts, Cabo de la Vela, Punta Gallinas · Culture Wayú"
+    }
+  },
+  "TESTIMONIOS": {
+    "TAG": "💬 Ce qu'ils disent",
+    "TITLE": "Aventuriers heureux 🌟",
+    "SUBTITLE": "Des milliers de voyageurs ont vécu des expériences uniques avec Wi Make Tours Santa Elena.",
+    "CARLOS": {
+      "TEXT": "\"Le trekking au Cerro Kennedy a été l'expérience la plus incroyable de ma vie. Je le recommande à 100 % !\"",
+      "AUTHOR": "Carlos M.",
+      "SUB": "Bogotá · Trek Cerro Kennedy 2J"
+    },
+    "SARAH": {
+      "TEXT": "\"La Cité Perdue était magique. L'organisation, la nourriture, les guides bilingues... tout était parfait.\"",
+      "AUTHOR": "Sarah L.",
+      "SUB": "Londres, R.-U. · Cité Perdue 4J"
+    },
+    "ANDRES": {
+      "TEXT": "\"La Guajira avec eux était hallucinante. Voir le lever du soleil à Cabo de la Vela est quelque chose que je n'oublierai jamais.\"",
+      "AUTHOR": "Andrés R.",
+      "SUB": "Medellín · Cabo de la Vela"
+    }
+  },
+  "CONTACTO": {
+    "TAG": "📬 Contactez-nous",
+    "TITLE": "Planifiez votre aventure ! 🎒",
+    "SUBTITLE": "Prêt à vivre l'expérience de votre vie dans la Sierra Nevada ?",
+    "FORM": {
+      "TITLE": "📩 Renseignez-vous sur un tour",
+      "NAME": "Votre nom",
+      "PHONE": "WhatsApp / Téléphone",
+      "INTERESTED": "Quel tour vous intéresse ?",
+      "SELECT_DEFAULT": "Sélectionnez un forfait...",
+      "DATE": "Date approximative",
+      "PEOPLE": "Combien de personnes ?",
+      "P1": "1 personne",
+      "P2": "2 personnes",
+      "P3_5": "3–5 personnes",
+      "P6_10": "6–10 personnes",
+      "P_GRANDE": "Grand groupe (+10)",
+      "MESSAGE": "Message (facultatif)",
+      "PLACEHOLDER_MESSAGE": "Parlez-nous de votre aventure idéale...",
+      "SUBMIT": "🚀 Envoyer par WhatsApp"
+    }
+  },
+  "AGENCY_INFO": {
+    "H2": "Agence de voyages tour-opérateur, spécialisée dans le tourisme de nature dans la Sierra Nevada de Santa Marta.",
+    "P_HTML": "Venez explorer les meilleurs sites touristiques de Santa Marta, en compagnie de nos guides paysans et natifs ; Si vous cherchez à vivre des expériences originales et à faire du <strong>TREKKING</strong> dans la Sierra Nevada de Santa Marta, <strong>WI MAKE TOURS</strong> est votre meilleur choix. <br> Des expériences d'une journée et bien plus <strong>Ici.</strong>",
+    "OPINIONS": "mes avis",
+    "DENUNCIATION": {
+      "TITLE": "DÉNONCEZ",
+      "SUB": "L'EXPLOITATION SEXUELLE DES ENFANTS ET DES ADOLESCENTS",
+      "CRIME_HTML": "LE COMMERCE SEXUEL AVEC DES PERSONNES DE MOINS DE 18 ANS EST UN <strong>CRIME</strong>"
+    }
+  },
+  "NOSOTROS": {
+    "HERO": {
+      "TITLE": "🌿 Qui sommes-nous",
+      "DESC": "Découvrez l'histoire et l'âme de Wi Make Tours Santa Elena"
+    },
+    "TABS": {
+      "ABOUT": "Qui sommes-nous ?",
+      "FOUNDER": "Fondateur",
+      "HISTORY": "Histoire",
+      "MISION": "Mission et Vision",
+      "VALUES": "Valeurs",
+      "EXPERIENCES": "Expériences"
+    },
+    "ABOUT_PANEL": {
+      "TITLE": "Nous sommes la Sierra Nevada",
+      "P1": "Nous sommes une <strong>agence de voyages tour-opérateur</strong>, avec le <strong>RNT 280360</strong>, basée dans la ville de <strong>Santa Marta, Colombie</strong>, qui opère avec des guides paysans dans la Sierra Nevada de Santa Marta, le Trekking au Cerro Kennedy, concessionnaires de notre principale destination. Et avec les Communautés Indigènes, d'autres destinations touristiques.",
+      "P2": "L'écotourisme et l'ethnotourisme sont notre priorité, nous réalisons des activités durables, contribuant au développement économique des communautés, tout en respectant l'environnement, la culture et les coutumes.",
+      "P3": "Nous sommes une entreprise entièrement créée par un paysan de la Sierra Nevada de Santa Marta, qui, avec effort et dévouement, a voulu faire connaître aux nationaux et aux étrangers une partie de notre culture colombienne.",
+      "SLOGAN": "🌎 <strong>Le meilleur de la Colombie pour le monde</strong>"
+    },
+    "BADGES": {
+      "RNT_DESC": "Registre National du Tourisme officiel",
+      "ECO_DESC": "Tourisme durable et responsable",
+      "NATIVES_DESC": "Paysans et indigènes experts",
+      "ANTI_DESC": "Tourisme éthique qui protège l'enfance"
+    },
+    "FOUNDER": {
+      "TAG": "Fondateur & PDG",
+      "TITLE": "Le cœur de Wi Make Tours Santa Elena",
+      "P1": "Wimake Tours Santa Elena est une agence tour-opérateur créée par les frères et sœurs Yuli, Rafa et Alba Rincón Mora avec leur mère Ana Rubiela, une famille d'origine paysanne née et élevée à Cerro Kennedy, dans la Sierra Nevada de Santa Marta ; des personnes humbles à l'esprit de progrès, amoureuses de la nature et connaisseuses de la région et de sa culture.",
+      "P2": "Cette entreprise est née pour perpétuer l'héritage de notre frère Carlos Rincón Mora, pionnier du tourisme dans la région, qui n'est plus de ce monde, mais qui, avec sa sagesse et son amour pour sa terre, nous a appris à valoriser ce que nous avons, à avoir une vision de progrès et à faire connaître les merveilles de la Sierra Nevada, en particulier le Cerro Kennedy, pour que d'autres personnes le découvrent et en profitent.",
+      "L1": "✅ Plus de 10 ans d'expérience dans le tourisme d'aventure",
+      "L2": "✅ Guide certifié par le Ministère du Commerce, de l'Industrie et du Tourisme",
+      "L3": "✅ Opérateur concessionnaire officiel du Cerro Kennedy",
+      "L4": "✅ Promoteur de l'écotourisme et de la culture indigène Kogui, Wiwa, Arhuaco et Kankuamo"
+    },
+    "HISTORY": {
+      "TITLE": "Notre Histoire",
+      "P1": "Wi Make est née pour perpétuer le rêve et l'héritage de notre cher frère, Carlos Rincón Mora, pionnier du tourisme dans notre région. Bien qu'il ne soit aujourd'hui plus physiquement parmi nous, sa vision, son esprit entrepreneurial et l'amour profond qu'il ressentait pour la Sierra Nevada de Santa Marta demeurent l'inspiration qui guide notre chemin.",
+      "P2": "Carlos nous a appris que la véritable richesse de notre terre réside dans sa nature, dans ses habitants et dans les histoires que chaque recoin a à raconter. Il nous a inculqué l'engagement de protéger ce paradis et de le partager avec ceux qui souhaitent vivre des expériences authentiques, toujours dans le respect de l'environnement et des communautés locales.",
+      "P3": "Grâce à sa passion, des lieux emblématiques comme le Cerro Kennedy ont commencé à être connus et appréciés par des voyageurs de différents horizons. Aujourd'hui, nous assumons avec fierté la mission de poursuivre cet héritage, en ouvrant les portes à de nouvelles aventures et en montrant au monde les merveilles de notre région.",
+      "P4": "Chez Wi Make, nous n'organisons pas seulement des voyages ; nous créons des expériences qui naissent du cœur, nous accueillons chaque visiteur comme un membre de notre famille et nous travaillons avec dévouement pour que chaque parcours laisse des souvenirs inoubliables, inspire l'amour de la nature et permette de découvrir l'essence de la Sierra Nevada de Santa Marta.",
+      "P5": "Chaque voyage que nous réalisons est un hommage à la vision de Carlos et une invitation pour que vous aussi, vous tombiez amoureux de cette terre extraordinaire."
+    },
+    "MISION_VISION": {
+      "MISION_TITLE": "Mission",
+      "MISION_DESC": "Chez WIMAKE TOURS SANTA ELENA, notre mission est d'offrir des voyages parfaits où les voyageurs nationaux et internationaux vivent des expériences touristiques responsables, différentes et inoubliables ; plus que voyager, c'est connecter l'âme à l'essence même de la nature et de la culture de la Colombie, en recherchant la durabilité et la protection de l'environnement, en travaillant avec des communautés locales qui connaissent chaque territoire et qui partagent nos valeurs de responsabilité, favorisant ainsi le développement économique et social.",
+      "VISION_TITLE": "Vision",
+      "VISION_DESC": "D'ici 2030, devenir l'agence de tourisme de nature, d'aventure et d'écotourisme de référence dans les Caraïbes colombiennes, reconnue à l'international pour offrir des expériences de haute qualité qui revalorisent les régions les plus authentiques et les plus reculées de Colombie. Nous nous distinguerons en connectant les voyageurs de luxe, les familles et les amoureux de la nature au patrimoine naturel et culturel et aux communautés locales, de manière respectueuse et durable, en générant un impact positif sur la conservation de l'environnement et le développement des territoires, tout en créant des souvenirs uniques et inoubliables."
+    },
+    "VALUES": {
+      "V1": { "TITLE": "Durabilité", "DESC": "Un tourisme responsable qui respecte la nature et les communautés ancestrales." },
+      "V2": { "TITLE": "Sécurité", "DESC": "Équipements certifiés, trousse de secours et protocoles de sécurité à chaque aventure." },
+      "V3": { "TITLE": "Respect", "DESC": "Un profond respect pour la culture, les coutumes et les peuples indigènes." },
+      "V4": { "TITLE": "Authenticité", "DESC": "Des expériences authentiques, guidées par des natifs qui connaissent chaque recoin." },
+      "V5": { "TITLE": "Engagement social", "DESC": "Contre l'exploitation des enfants. Un tourisme qui protège les plus vulnérables." },
+      "V6": { "TITLE": "Communauté", "DESC": "Le tourisme comme moteur de développement économique local et social." }
+    },
+    "EXPERIENCES": {
+      "SUB": "Ce que disent nos voyageurs ⭐",
+      "DESC": "Plus de 500 aventuriers nous ont fait confiance. Voici leurs histoires."
+    }
+  },
+  "TOUR_DETAIL": {
+    "BREADCRUMB_HOME": "Accueil",
+    "OVERVIEW_TITLE": "À propos de cette aventure",
+    "OVERVIEW_SUPPORT": "Découvrez la Sierra Nevada de Santa Marta avec des guides experts locaux et paysans qui connaissent chaque sentier secret de cette montagne sacrée.",
+    "GALLERY_TITLE": "Moments de notre expérience",
+    "ITINERARY_TITLE": "Itinéraire étape par étape",
+    "INCLUSIONS_INCLUDES": "✔ Ce qui est inclus",
+    "INCLUSIONS_EXCLUDES": "✘ Non inclus",
+    "TIPS_TITLE": "Ce que vous devez emporter",
+    "BOOKING": {
+      "FROM": "Prix à partir de",
+      "HIGHLIGHT": "Réservez votre place aujourd'hui et coordonnez les détails directement avec le guide par WhatsApp.",
+      "SUBMIT": "Demander une réservation",
+      "PAGO": "🛡️ Paiement sécurisé",
+      "GUIAS": "⭐ Guides officiels",
+      "CERT": "Opérateur RNT 280360"
+    },
+    "NOT_FOUND": {
+      "TITLE": "Oups ! Aventure introuvable",
+      "DESC": "Il semble que ce sentier n'ait pas encore été exploré.",
+      "LINK": "Explorer d'autres tours"
+    }
+  },
+  "FOOTER": {
+    "TOURS": "Nos tours",
+    "MADE_WITH": "Fait avec ❤️ dans la Sierra Nevada de Santa Marta, Colombie 🇨🇴"
+  }
+}

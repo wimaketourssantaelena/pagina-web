@@ -1,0 +1,7 @@
+/* home.component.css - solo organización general de la página */
+/* El CSS de cada sección está en su propio section component */
+
+.home-wrapper {
+  display: flex;
+  flex-direction: column;
+}

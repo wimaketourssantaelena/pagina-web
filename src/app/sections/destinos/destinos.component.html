@@ -1,0 +1,64 @@
+<section id="destinos" class="destinos-section">
+  <div class="destinos-inner">
+    <div class="section-tag">{{ 'DESTINOS.TAG' | translate }}</div>
+    <h2 class="section-title">{{ 'DESTINOS.TITLE' | translate }}</h2>
+    <p class="section-subtitle">{{ 'DESTINOS.SUBTITLE' | translate }}</p>
+
+    <div class="destinos-grid">
+      @for (d of destinos; track d.key) {
+        <div class="destino-card" (click)="openGallery(d)">
+          @if (d.isVideo) {
+            <video autoplay muted loop playsinline class="destino-media" [muted]="true">
+              <source type="video/mp4" [src]="d.videoSrc">
+            </video>
+          } @else {
+            <img class="destino-media" [src]="d.cover" [alt]="d.key">
+          }
+          <div class="destino-overlay">
+            <h3>{{ d.titleKey | translate }}</h3>
+            <p>{{ d.descKey | translate }}</p>
+            @if (d.images.length) {
+              <span class="gallery-hint">📷 {{ d.images.length }} fotos · Ver galería</span>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Galería (lightbox) -->
+@if (galleryOpen() && activeDestino) {
+  <div class="lb-backdrop" (click)="closeGallery()">
+    <div class="lb-box" (click)="$event.stopPropagation()">
+      <button class="lb-close" aria-label="Cerrar" (click)="closeGallery()">✕</button>
+
+      <div class="lb-main">
+        <button class="lb-arrow lb-prev" aria-label="Anterior" (click)="prev()">‹</button>
+        <img class="lb-img" alt="Galería" [src]="activeDestino.images[activeIndex()]">
+        <button class="lb-arrow lb-next" aria-label="Siguiente" (click)="next()">›</button>
+      </div>
+
+      <div class="lb-info">
+        <span class="lb-title">{{ activeDestino.titleKey | translate }}</span>
+        <span class="lb-counter">{{ activeIndex() + 1 }} / {{ activeDestino.images.length }}</span>
+      </div>
+
+      <div class="lb-thumbs">
+        @for (img of activeDestino.images; track img; let i = $index) {
+          <img class="lb-thumb"
+               [class.active]="i === activeIndex()"
+               (click)="goTo(i)"
+               [src]="img"
+               alt="Miniatura {{ i + 1 }}">
+        }
+      </div>
+
+      <div class="lb-dots">
+        @for (img of activeDestino.images; track img; let i = $index) {
+          <span class="lb-dot" [class.active]="i === activeIndex()" (click)="goTo(i)"></span>
+        }
+      </div>
+    </div>
+  </div>
+}

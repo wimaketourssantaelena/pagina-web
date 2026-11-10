@@ -1,0 +1,173 @@
+@if (tour(); as t) {
+  <main class="premium-tour-page">
+
+    <!-- HERO INMERSIVO -->
+    <header class="tour-hero" [style.backgroundImage]="'url(' + t.fullImg + ')'">
+      <div class="hero-glass-overlay"></div>
+      <div class="hero-content container">
+        <div class="hero-titles">
+          <h1>{{ t.title }}</h1>
+        </div>
+      </div>
+    </header>
+
+    <!-- CONTENT WRAPPER -->
+    <section class="tour-details-wrapper">
+      <div class="container main-grid">
+
+        <!-- COLUMNA IZQUIERDA: INFORMACIÓN -->
+        <div class="info-column">
+
+          <!-- SOBRE EL TOUR -->
+          <article class="info-section animate-up" id="overview">
+            <h2 class="section-title">{{ 'TOUR_DETAIL.OVERVIEW_TITLE' | translate }}</h2>
+            @if (t.intro; as intro) {
+              <h3 class="intro-title">{{ intro.title }}</h3>
+              @for (par of intro.paragraphs; track par) {
+                <p class="description-text">{{ par }}</p>
+              }
+            }
+            <p class="description-text">{{ t.desc }}</p>
+            <p class="supporting-text">{{ 'TOUR_DETAIL.OVERVIEW_SUPPORT' | translate }}</p>
+          </article>
+
+          <!-- GALERÍA -->
+          <article class="info-section animate-up" id="gallery">
+            <h2 class="section-title">{{ 'TOUR_DETAIL.GALLERY_TITLE' | translate }}</h2>
+            <div class="tour-collage">
+              @for (img of galeria; track img) {
+                <img [src]="img" alt="{{ t.title }}" (click)="openLightbox(img)">
+              }
+            </div>
+          </article>
+
+          <!-- ITINERARIO LÍNEA DE TIEMPO -->
+          <article class="info-section animate-up" id="itinerary">
+            <h2 class="section-title">{{ 'TOUR_DETAIL.ITINERARY_TITLE' | translate }}</h2>
+            <div class="vertical-timeline">
+              @for (step of t.itinerario; track step.dia) {
+                <div class="timeline-step">
+                  <div class="step-marker">
+                    <span class="day-label">
+                      {{ langService.currentLang() === 'en' ? 'Day' : 'Día' }} {{ step.dia }}
+                    </span>
+                  </div>
+                  <div class="step-content">
+                    @if (step.titulo) {
+                      <h3 class="step-title">{{ step.titulo }}</h3>
+                    }
+                    @if (step.secciones) {
+                      @for (sec of step.secciones; track $index) {
+                        <div class="step-section">
+                          <h4>
+                            @if (sec.hora) {
+                              <span class="step-time">{{ sec.hora }}</span>
+                            }
+                            {{ sec.titulo }}
+                          </h4>
+                          @if (sec.texto) {
+                            <p>{{ sec.texto }}</p>
+                          }
+                          @if (sec.tabla) {
+                            <table class="ficha-tabla">
+                              <tbody>
+                                @for (fila of sec.tabla; track fila.label) {
+                                  <tr>
+                                    <th scope="row">{{ fila.label }}</th>
+                                    <td>{{ fila.valor }}</td>
+                                  </tr>
+                                }
+                              </tbody>
+                            </table>
+                          }
+                        </div>
+                      }
+                    } @else {
+                      <p>{{ step.desc }}</p>
+                    }
+                  </div>
+                </div>
+              }
+            </div>
+          </article>
+
+          <!-- INCLUSIONES -->
+          <article class="info-section animate-up" id="inclusions">
+            <div class="inclusion-cards">
+              <div class="inclusion-card includes">
+                <h3>{{ 'TOUR_DETAIL.INCLUSIONS_INCLUDES' | translate }}</h3>
+                <ul>
+                  @for (item of t.incluye; track item) {
+                    <li><span class="check">✓</span> {{ item }}</li>
+                  }
+                </ul>
+              </div>
+              @if (t.noIncluye) {
+                <div class="inclusion-card excludes">
+                  <h3>{{ 'TOUR_DETAIL.INCLUSIONS_EXCLUDES' | translate }}</h3>
+                  <ul>
+                    @for (item of t.noIncluye; track item) {
+                      <li><span class="cross">×</span> {{ item }}</li>
+                    }
+                  </ul>
+                </div>
+              }
+            </div>
+          </article>
+
+          <!-- RECOMENDACIONES -->
+          <article class="info-section animate-up" id="tips">
+            <h2 class="section-title">{{ 'TOUR_DETAIL.TIPS_TITLE' | translate }}</h2>
+            <div class="tips-badges">
+              @for (tip of t.recomendaciones; track tip) {
+                <span class="tip-badge">🥾 {{ tip }}</span>
+              }
+            </div>
+          </article>
+        </div>
+
+        <!-- COLUMNA DERECHA: SIDEBAR DE RESERVA -->
+        <aside class="booking-sidebar">
+          <div class="sticky-card">
+            <div class="booking-header">
+              <small>{{ 'TOUR_DETAIL.BOOKING.FROM' | translate }}</small>
+              <div class="price-tag">{{ t.precio }}</div>
+            </div>
+            <div class="booking-body">
+              <p class="info-highlight">{{ 'TOUR_DETAIL.BOOKING.HIGHLIGHT' | translate }}</p>
+              <a [href]="t.waLink" target="_blank" class="btn-whatsapp-premium">
+                <span class="btn-icon">📲</span> {{ 'TOUR_DETAIL.BOOKING.SUBMIT' | translate }}
+              </a>
+              <div class="trust-indicators">
+                <span>{{ 'TOUR_DETAIL.BOOKING.PAGO' | translate }}</span>
+                <span>{{ 'TOUR_DETAIL.BOOKING.GUIAS' | translate }}</span>
+              </div>
+            </div>
+            <div class="booking-footer">
+              <img src="/assets/img/img1.jpeg" alt="Certificado" class="footer-mini-img">
+              <p>{{ 'TOUR_DETAIL.BOOKING.CERT' | translate }}</p>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Visor de fotos -->
+  @if (lightboxImg()) {
+    <div class="lightbox" (click)="closeLightbox()">
+      <button class="lightbox-close" aria-label="Cerrar" (click)="closeLightbox()">×</button>
+      <img alt="Imagen ampliada" (click)="$event.stopPropagation()" [src]="lightboxImg()">
+    </div>
+  }
+} @else {
+  <div class="not-found-modern">
+    <div class="not-found-content">
+      <h2>{{ 'TOUR_DETAIL.NOT_FOUND.TITLE' | translate }}</h2>
+      <p>{{ 'TOUR_DETAIL.NOT_FOUND.DESC' | translate }}</p>
+      <a routerLink="/" class="btn-home">{{ 'TOUR_DETAIL.NOT_FOUND.LINK' | translate }}</a>
+    </div>
+  </div>
+}

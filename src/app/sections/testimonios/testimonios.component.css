@@ -1,0 +1,53 @@
+.testimonios-section {
+  position: relative;
+  background:
+    linear-gradient(#1418136b, #1418138c),
+    url(/assets/img/img2.jpeg) center / cover fixed no-repeat;
+  background-color: var(--verde-bosque);
+  padding: 80px 40px;
+}
+.testimonios-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.testimonios-section .section-title {
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.55);
+}
+.testimonios-section .section-subtitle {
+  color: #fff;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
+}
+.testimonios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+.testi-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 28px;
+  border: 3px solid #e8f5e9;
+  box-shadow: 5px 5px #c8e6c9;
+  transition: all 0.25s;
+}
+.testi-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 8px 8px 0 var(--verde);
+  border-color: var(--verde);
+}
+.testi-card blockquote {
+  font-size: 15px;
+  color: #444;
+  line-height: 1.7;
+  margin-bottom: 18px;
+  font-style: italic;
+  font-weight: 600;
+}
+@media (max-width: 900px) {
+  .testimonios-section {
+    padding: 60px 24px;
+  }
+}

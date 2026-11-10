@@ -1,0 +1,52 @@
+/* va encima de la foto del hero: fondo oscuro translúcido, letras e iconos claros */
+.valores {
+  background: #1f170fa6;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 10px 40px;
+}
+.valor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 4px 24px;
+  text-align: center;
+}
+.valor + .valor {
+  border-left: 1px solid #ffffff40;
+}
+.valor svg {
+  height: 40px;
+  width: auto;
+  fill: none;
+  stroke: #a8d977;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.valor p {
+  max-width: 190px;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.35;
+  color: #fff;
+}
+.valor:first-child p,
+.valor:nth-child(2) p {
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .valores {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 24px;
+    padding: 24px 16px;
+  }
+  .valor:nth-child(3) {
+    border-left: 0;
+  }
+}

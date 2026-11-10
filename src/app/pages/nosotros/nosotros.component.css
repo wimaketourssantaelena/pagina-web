@@ -1,0 +1,379 @@
+/* =========================================
+   NOSOTROS / QUIÉNES SOMOS - premium tabs
+   ========================================= */
+
+.nos-hero {
+  height: 350px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+.nos-hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+.nos-hero-overlay {
+  position: relative;
+  z-index: 2;
+  background: #145a3266;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.nos-hero-overlay h1 {
+  font-family:
+    Fredoka One,
+    cursive;
+  font-size: clamp(32px, 5vw, 56px);
+  text-shadow: 3px 3px 0 var(--verde-bosque);
+  margin-bottom: 10px;
+}
+.nos-hero-overlay p {
+  font-size: 18px;
+  font-weight: 700;
+  opacity: 0.9;
+}
+.nos-tabs-wrapper {
+  background: #fff;
+  position: sticky;
+  top: 85px;
+  z-index: 100;
+  box-shadow: 0 4px 20px #0000000d;
+  border-bottom: 3px solid var(--verde);
+}
+.nos-tabs {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 20px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x proximity;
+}
+.nos-tab {
+  scroll-snap-align: start;
+}
+.nos-tabs::-webkit-scrollbar {
+  display: none;
+}
+.nos-tab {
+  padding: 12px 24px;
+  border-radius: 30px;
+  border: 2px solid transparent;
+  background: var(--gris-suave);
+  color: #555;
+  font-weight: 800;
+  font-size: 14px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.nos-tab:hover {
+  background: #e8f5e9;
+  color: var(--verde-oscuro);
+  transform: translateY(-2px);
+}
+.nos-tab.active {
+  background: var(--verde);
+  color: #fff;
+  border-color: var(--verde-oscuro);
+  box-shadow: 4px 4px 0 var(--verde-oscuro);
+}
+.nos-content {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+.nos-panel {
+  display: grid;
+  gap: 40px;
+  animation: fadeInDown 0.6s ease both;
+}
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.panel-quienes {
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+}
+.nos-icon-big {
+  font-size: 64px;
+  margin-bottom: 20px;
+}
+.nos-text h2 {
+  font-family:
+    Fredoka One,
+    cursive;
+  font-size: 32px;
+  color: var(--verde-oscuro);
+  margin-bottom: 24px;
+}
+.nos-text p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 20px;
+}
+.nos-highlight {
+  background: #f1f8e9;
+  border-left: 5px solid var(--verde);
+  padding: 20px;
+  font-style: italic;
+  font-weight: 700;
+  border-radius: 0 15px 15px 0;
+}
+.nos-slogan {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--verde-oscuro);
+  margin-top: 25px;
+}
+.nos-gallery {
+  column-count: 2;
+  column-gap: 14px;
+}
+.nos-gallery img {
+  width: 100%;
+  display: block;
+  border-radius: 18px;
+  margin-bottom: 14px;
+  cursor: pointer;
+  break-inside: avoid;
+  box-shadow: 0 6px 18px #0000002e;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+.nos-gallery img:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 10px 26px #00000047;
+}
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #000000d9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  animation: lbFade 0.25s ease;
+  cursor: zoom-out;
+}
+.lightbox img {
+  max-width: 92vw;
+  max-height: 88vh;
+  border-radius: 14px;
+  box-shadow: 0 12px 40px #0009;
+  cursor: default;
+}
+.lightbox-close {
+  position: fixed;
+  top: 20px;
+  right: 28px;
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background: #ffffff26;
+  color: #fff;
+  font-size: 30px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.lightbox-close:hover {
+  background: #ffffff4d;
+}
+@keyframes lbFade {
+  0% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.panel-fundador {
+  grid-template-columns: 0.8fr 1.2fr;
+  align-items: center;
+}
+.fundador-avatar {
+  background: #a5d6a7;
+  height: 350px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 150px;
+  border: 5px solid var(--verde-oscuro);
+  box-shadow: 12px 12px 0 var(--verde-oscuro);
+}
+.nos-subtag {
+  display: inline-block;
+  background: var(--naranja);
+  color: #fff;
+  font-weight: 800;
+  font-size: 12px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+.fundador-list {
+  list-style: none;
+  margin-top: 25px;
+}
+.fundador-list li {
+  margin-bottom: 12px;
+  font-weight: 700;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.panel-mision {
+  grid-template-columns: 1fr 1fr;
+}
+.mision-card {
+  background: #fff;
+  padding: 40px;
+  border-radius: 30px;
+  border: 4px solid var(--verde);
+  box-shadow: 10px 10px 0 var(--verde-oscuro);
+  position: relative;
+}
+.mision-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+.mision-card h3 {
+  font-family:
+    Fredoka One,
+    cursive;
+  font-size: 28px;
+  color: var(--verde-oscuro);
+  margin-bottom: 15px;
+}
+.mision-card p {
+  font-size: 16px;
+  line-height: 1.7;
+  font-weight: 600;
+  color: #555;
+}
+.panel-valores {
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+.valor-card {
+  background: #fafffe;
+  padding: 30px;
+  border-radius: 25px;
+  border: 3px solid #c8e6c9;
+  text-align: center;
+  transition: all 0.3s;
+}
+.valor-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--verde);
+  box-shadow: 0 10px 30px #2ecc711a;
+}
+.valor-icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+.valor-card h4 {
+  font-family:
+    Fredoka One,
+    cursive;
+  font-size: 20px;
+  color: var(--verde-oscuro);
+  margin-bottom: 10px;
+}
+.valor-card p {
+  font-size: 14px;
+  font-weight: 600;
+  color: #666;
+}
+.panel-experiencias {
+  grid-template-columns: 1fr;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  margin-top: -60px;
+  margin-bottom: -60px;
+}
+.exp-intro {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.exp-intro h2 {
+  font-family:
+    Fredoka One,
+    cursive;
+  font-size: 32px;
+  color: var(--verde-oscuro);
+}
+.exp-intro p {
+  font-weight: 700;
+  color: #888;
+}
+.exp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.exp-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 25px;
+  border: 3px solid #e8f5e9;
+  box-shadow: 6px 6px #c8e6c9;
+}
+@media (max-width: 900px) {
+  .panel-quienes,
+  .panel-fundador,
+  .panel-mision {
+    grid-template-columns: 1fr;
+  }
+  .fundador-avatar {
+    height: 250px;
+    order: -1;
+  }
+  .exp-grid {
+    grid-template-columns: 1fr;
+  }
+  .nos-tabs {
+    justify-content: flex-start;
+    gap: 8px;
+    padding: 12px 16px;
+    flex-wrap: nowrap;
+  }
+  .nos-tab {
+    flex: 0 0 auto;
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+  .nos-tab:last-child {
+    margin-right: 16px;
+  }
+}

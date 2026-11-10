@@ -1,0 +1,149 @@
+<!-- Hero con vídeo -->
+<div class="nos-hero">
+  <video class="nos-hero-video" autoplay muted loop playsinline [muted]="true">
+    <source src="/assets/video/vid4.mp4" type="video/mp4">
+  </video>
+  <div class="nos-hero-overlay">
+    <h1>{{ 'NOSOTROS.HERO.TITLE' | translate }}</h1>
+    <p>{{ 'NOSOTROS.HERO.DESC' | translate }}</p>
+  </div>
+</div>
+
+<!-- Pestañas -->
+<div class="nos-tabs-wrapper">
+  <div class="nos-tabs">
+    <button class="nos-tab" [class.active]="activeTab === 'quienes'" (click)="activeTab = 'quienes'">{{ 'NOSOTROS.TABS.ABOUT' | translate }}</button>
+    <button class="nos-tab" [class.active]="activeTab === 'fundador'" (click)="activeTab = 'fundador'">{{ 'NOSOTROS.TABS.FOUNDER' | translate }}</button>
+    <button class="nos-tab" [class.active]="activeTab === 'historia'" (click)="activeTab = 'historia'">{{ 'NOSOTROS.TABS.HISTORY' | translate }}</button>
+    <button class="nos-tab" [class.active]="activeTab === 'mision'" (click)="activeTab = 'mision'">{{ 'NOSOTROS.TABS.MISION' | translate }}</button>
+    <button class="nos-tab" [class.active]="activeTab === 'valores'" (click)="activeTab = 'valores'">{{ 'NOSOTROS.TABS.VALUES' | translate }}</button>
+    <button class="nos-tab" [class.active]="activeTab === 'experiencias'" (click)="activeTab = 'experiencias'">{{ 'NOSOTROS.TABS.EXPERIENCES' | translate }}</button>
+  </div>
+</div>
+
+<div class="nos-content">
+
+  @if (activeTab === 'quienes') {
+    <div class="nos-panel panel-quienes">
+      <div class="nos-text">
+        <div class="nos-icon-big">🏔️</div>
+        <h2>{{ 'NOSOTROS.ABOUT_PANEL.TITLE' | translate }}</h2>
+        <p [innerHTML]="'NOSOTROS.ABOUT_PANEL.P1' | translate"></p>
+        <p [innerHTML]="'NOSOTROS.ABOUT_PANEL.P2' | translate"></p>
+        <p class="nos-highlight" [innerHTML]="'NOSOTROS.ABOUT_PANEL.P3' | translate"></p>
+        <p class="nos-slogan" [innerHTML]="'NOSOTROS.ABOUT_PANEL.SLOGAN' | translate"></p>
+      </div>
+      <div class="nos-gallery">
+          <img src="/assets/img/img1.jpeg" alt="Wi Make Tours Santa Elena" (click)="openLightbox('/assets/img/img1.jpeg')">
+          <img src="/assets/img/img3.jpeg" alt="Wi Make Tours Santa Elena" (click)="openLightbox('/assets/img/img3.jpeg')">
+          <img src="/assets/img/img2.jpeg" alt="Wi Make Tours Santa Elena" (click)="openLightbox('/assets/img/img2.jpeg')">
+          <img src="/assets/img/img4.jpg" alt="Wi Make Tours Santa Elena" (click)="openLightbox('/assets/img/img4.jpg')">
+          <img src="/assets/img/img5.jpeg" alt="Wi Make Tours Santa Elena" (click)="openLightbox('/assets/img/img5.jpeg')">
+      </div>
+    </div>
+  }
+
+  @if (activeTab === 'fundador') {
+    <div class="nos-panel panel-fundador">
+      <div class="fundador-avatar" style="background: url('/assets/img/fundadores.jpeg') center/cover;"></div>
+      <div class="nos-text">
+        <div class="nos-subtag">{{ 'NOSOTROS.FOUNDER.TAG' | translate }}</div>
+        <h2>{{ 'NOSOTROS.FOUNDER.TITLE' | translate }}</h2>
+        <p>{{ 'NOSOTROS.FOUNDER.P1' | translate }}</p>
+        <p>{{ 'NOSOTROS.FOUNDER.P2' | translate }}</p>
+        <ul class="fundador-list">
+          <li>{{ 'NOSOTROS.FOUNDER.L1' | translate }}</li>
+          <li>{{ 'NOSOTROS.FOUNDER.L2' | translate }}</li>
+          <li>{{ 'NOSOTROS.FOUNDER.L3' | translate }}</li>
+          <li>{{ 'NOSOTROS.FOUNDER.L4' | translate }}</li>
+        </ul>
+      </div>
+    </div>
+  }
+
+  @if (activeTab === 'historia') {
+    <div class="nos-panel panel-quienes">
+      <div class="nos-text">
+        <div class="nos-icon-big">📖</div>
+        <h2>{{ 'NOSOTROS.HISTORY.TITLE' | translate }}</h2>
+        <p>{{ 'NOSOTROS.HISTORY.P1' | translate }}</p>
+        <p>{{ 'NOSOTROS.HISTORY.P2' | translate }}</p>
+        <p>{{ 'NOSOTROS.HISTORY.P3' | translate }}</p>
+        <p>{{ 'NOSOTROS.HISTORY.P4' | translate }}</p>
+        <p class="nos-slogan">{{ 'NOSOTROS.HISTORY.P5' | translate }}</p>
+      </div>
+      <div class="nos-gallery">
+          <img src="/assets/img/img1.jpeg" alt="Historia Wi Make Tours Santa Elena" (click)="openLightbox('/assets/img/img1.jpeg')">
+          <img src="/assets/img/img3.jpeg" alt="Historia Wi Make Tours Santa Elena" (click)="openLightbox('/assets/img/img3.jpeg')">
+          <img src="/assets/img/img2.jpeg" alt="Historia Wi Make Tours Santa Elena" (click)="openLightbox('/assets/img/img2.jpeg')">
+          <img src="/assets/img/img4.jpg" alt="Historia Wi Make Tours Santa Elena" (click)="openLightbox('/assets/img/img4.jpg')">
+          <img src="/assets/img/img5.jpeg" alt="Historia Wi Make Tours Santa Elena" (click)="openLightbox('/assets/img/img5.jpeg')">
+      </div>
+    </div>
+  }
+
+  @if (activeTab === 'mision') {
+    <div class="nos-panel panel-mision">
+      <div class="mision-card">
+        <div class="mision-icon">🎯</div>
+        <h3>{{ 'NOSOTROS.MISION_VISION.MISION_TITLE' | translate }}</h3>
+        <p>{{ 'NOSOTROS.MISION_VISION.MISION_DESC' | translate }}</p>
+      </div>
+      <div class="mision-card">
+        <div class="mision-icon">🔭</div>
+        <h3>{{ 'NOSOTROS.MISION_VISION.VISION_TITLE' | translate }}</h3>
+        <p>{{ 'NOSOTROS.MISION_VISION.VISION_DESC' | translate }}</p>
+      </div>
+    </div>
+  }
+
+  @if (activeTab === 'valores') {
+    <div class="nos-panel panel-valores">
+      <div class="valor-card">
+        <div class="valor-icon">🌿</div>
+        <h4>{{ 'NOSOTROS.VALUES.V1.TITLE' | translate }}</h4>
+        <p>{{ 'NOSOTROS.VALUES.V1.DESC' | translate }}</p>
+      </div>
+      <div class="valor-card">
+        <div class="valor-icon">🛡️</div>
+        <h4>{{ 'NOSOTROS.VALUES.V2.TITLE' | translate }}</h4>
+        <p>{{ 'NOSOTROS.VALUES.V2.DESC' | translate }}</p>
+      </div>
+      <div class="valor-card">
+        <div class="valor-icon">🤝</div>
+        <h4>{{ 'NOSOTROS.VALUES.V3.TITLE' | translate }}</h4>
+        <p>{{ 'NOSOTROS.VALUES.V3.DESC' | translate }}</p>
+      </div>
+      <div class="valor-card">
+        <div class="valor-icon">💡</div>
+        <h4>{{ 'NOSOTROS.VALUES.V4.TITLE' | translate }}</h4>
+        <p>{{ 'NOSOTROS.VALUES.V4.DESC' | translate }}</p>
+      </div>
+      <div class="valor-card">
+        <div class="valor-icon">❤️</div>
+        <h4>{{ 'NOSOTROS.VALUES.V5.TITLE' | translate }}</h4>
+        <p>{{ 'NOSOTROS.VALUES.V5.DESC' | translate }}</p>
+      </div>
+      <div class="valor-card">
+        <div class="valor-icon">🌍</div>
+        <h4>{{ 'NOSOTROS.VALUES.V6.TITLE' | translate }}</h4>
+        <p>{{ 'NOSOTROS.VALUES.V6.DESC' | translate }}</p>
+      </div>
+    </div>
+  }
+
+  @if (activeTab === 'experiencias') {
+    <div class="nos-panel panel-experiencias">
+      <app-section-testimonios></app-section-testimonios>
+    </div>
+  }
+
+</div>
+
+<!-- Visor de fotos -->
+@if (lightboxImg()) {
+  <div class="lightbox" (click)="closeLightbox()">
+    <button class="lightbox-close" aria-label="Cerrar" (click)="closeLightbox()">×</button>
+    <img alt="Imagen ampliada" (click)="$event.stopPropagation()" [src]="lightboxImg()">
+  </div>
+}
