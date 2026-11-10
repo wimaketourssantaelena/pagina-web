@@ -1,0 +1,35 @@
+# Wi Make Tours Santa Elena
+
+> Agencia de viajes y tour operador en Santa Marta, Colombia (RNT 280360). Trekking al Cerro Kennedy, Ciudad Perdida y experiencias de naturaleza en la Sierra Nevada de Santa Marta y La Guajira, con guías campesinos y nativos.
+
+Las reservas se hacen por WhatsApp (+57 311 4054907) o por correo (wimaketourssantaelena@gmail.com). Los precios son "desde", por persona, en pesos colombianos (COP). El sitio está disponible en español, inglés y francés.
+
+## Páginas principales
+
+- [Inicio](https://wimaketoursantaelena.com/): paquetes, destinos y testimonios
+- [Quiénes somos](https://wimaketoursantaelena.com/quienes-somos): historia, fundador, misión y valores
+- [Contacto](https://wimaketoursantaelena.com/contacto): teléfonos, correo y formulario de consulta
+
+## Tours de trekking
+
+- [Trekking Cerro Kennedy 2D 1N](https://wimaketoursantaelena.com/tour/trekking-cerro-kennedy-2-dias-1-noche): cumbre a 2.860 msnm, 16 km, dificultad media, desde $856.000 COP
+- [Trekking Cerro Kennedy 3 Días](https://wimaketoursantaelena.com/tour/trekking-cerro-kennedy-3-dias-2-noches): incluye Cascada Sagrada Panku, desde $1.225.000 COP
+- [Ciudad Perdida 4 Días](https://wimaketoursantaelena.com/tour/ciudad-perdida-4-dias): caminata a la Ciudad Perdida Tayrona, desde $1.800.000 COP
+- [Cascada Sagrada Panku](https://wimaketoursantaelena.com/tour/trekking-cascada-sagrada-panku): caminata de 2 días, desde $840.000 COP
+
+## Tours de un día
+
+- [Kennedy Extremo 1 Día](https://wimaketoursantaelena.com/tour/full-day-trekking-cerro-kennedy): cima en una jornada, alto rendimiento, desde $599.000 COP
+- [Full Day San Lorenzo](https://wimaketoursantaelena.com/tour/full-day-san-lorenzo): miradores, cascadas y aves, desde $421.000 COP
+- [Aventura Río Don Diego](https://wimaketoursantaelena.com/tour/aventura-rio-don-diego): tubing y cultura Tayrona, desde $451.500 COP
+
+## La Guajira
+
+- [Cabo de la Vela 2D 1N](https://wimaketoursantaelena.com/tour/cabo-de-lavela-2-dias-1-noche): desierto, mar y cultura Wayuu, desde $450.000 COP
+- [Punta Gallinas 3 Días](https://wimaketoursantaelena.com/tour/punta-gallinas-3-dias): extremo norte de Sudamérica, desde $750.000 COP
+
+## Datos
+
+- [Catálogo de tours en JSON](https://wimaketoursantaelena.com/tours.json): id, título, categoría, duración, precio y URL
+- [Inicio en Markdown](https://wimaketoursantaelena.com/index.md)
+- [Sitemap](https://wimaketoursantaelena.com/sitemap.xml)

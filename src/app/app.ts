@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { RouterOutlet } from '@angular/router';
+import { SeoService } from './services/seo.service';
 
 @Component({
   selector: 'app-root',
@@ -20,4 +21,8 @@ import { RouterOutlet } from '@angular/router';
   `,
   styleUrl: './app.css'
 })
-export class AppComponent {}
+export class AppComponent {
+  constructor() {
+    inject(SeoService).init();
+  }
+}

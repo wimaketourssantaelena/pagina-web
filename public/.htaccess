@@ -1,9 +1,30 @@
 RewriteEngine On
-# If an existing asset or directory is requested go to it as it is
-RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]
-RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d
+
+DirectoryIndex index.html
+AddType text/markdown .md
+AddCharset utf-8 .md .txt .json .xml
+
+# Agentes que piden Markdown reciben la version .md del inicio
+RewriteCond %{HTTP_ACCEPT} text/markdown
+RewriteRule ^$ /index.md [L]
+
+# Archivos que existen se sirven tal cual
+RewriteCond %{REQUEST_FILENAME} -f
 RewriteRule ^ - [L]
 
-# If any other extension is requested and it is not index.html (to avoid infinite loop)
-# redirect it to index.html
-RewriteRule ^ /index.html [L]
+# Rutas de la aplicacion Angular. Si se agrega una ruta nueva en
+# app.routes.ts hay que agregarla tambien aqui (y en sitemap.xml).
+RewriteRule ^(quienes-somos|contacto)/?$ /index.html [L]
+RewriteRule ^tour/[a-z0-9-]+/?$ /index.html [L]
+
+# Cualquier otra URL devuelve un 404 real
+ErrorDocument 404 /404.html
+
+<IfModule mod_headers.c>
+  <FilesMatch "^index\.(html|md)$">
+    Header add Link "</llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+    Header add Link "</index.md>; rel=\"alternate\"; type=\"text/markdown\""
+    Header add Link "</sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\""
+    Header append Vary Accept
+  </FilesMatch>
+</IfModule>

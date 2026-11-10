@@ -1,0 +1,83 @@
+[
+  {
+    "id": "trekking-cerro-kennedy-2-dias-1-noche",
+    "titulo": "Trekking Cerro Kennedy 2D 1N",
+    "categoria": "trekking",
+    "duracion": "2 días, 1 noche",
+    "precioDesdeCOP": 856000,
+    "descripcion": "Ascenso de dos días por el bosque nuboso de la Sierra Nevada hasta la cumbre del Cerro Kennedy (2.860 msnm), con vista a los picos nevados Bolívar y Colón. 16 km, dificultad media.",
+    "url": "https://wimaketoursantaelena.com/tour/trekking-cerro-kennedy-2-dias-1-noche"
+  },
+  {
+    "id": "trekking-cerro-kennedy-3-dias-2-noches",
+    "titulo": "Trekking Cerro Kennedy 3 Días",
+    "categoria": "trekking",
+    "duracion": "3 días, 2 noches",
+    "precioDesdeCOP": 1225000,
+    "descripcion": "Tres días en la Sierra Nevada: Cerro Kennedy, estadía en casa rural con una familia campesina y visita a la Cascada Sagrada Panku. Dificultad media-alta.",
+    "url": "https://wimaketoursantaelena.com/tour/trekking-cerro-kennedy-3-dias-2-noches"
+  },
+  {
+    "id": "full-day-trekking-cerro-kennedy",
+    "titulo": "Kennedy Extremo 1 Día",
+    "categoria": "un-dia",
+    "duracion": "1 día",
+    "precioDesdeCOP": 599000,
+    "descripcion": "Para caminantes de alto rendimiento: la cima del Cerro Kennedy en una sola jornada.",
+    "url": "https://wimaketoursantaelena.com/tour/full-day-trekking-cerro-kennedy"
+  },
+  {
+    "id": "ciudad-perdida-4-dias",
+    "titulo": "Ciudad Perdida 4 Días",
+    "categoria": "trekking",
+    "duracion": "4 días, 3 noches",
+    "precioDesdeCOP": 1800000,
+    "descripcion": "El trek más famoso de Colombia: caminata por la selva hasta la Ciudad Perdida Tayrona.",
+    "url": "https://wimaketoursantaelena.com/tour/ciudad-perdida-4-dias"
+  },
+  {
+    "id": "trekking-cascada-sagrada-panku",
+    "titulo": "Cascada Sagrada Panku",
+    "categoria": "trekking",
+    "duracion": "2 días",
+    "precioDesdeCOP": 840000,
+    "descripcion": "Caminata espiritual y refrescante a la Cascada Sagrada Panku, guardián de las aguas de la Sierra Nevada.",
+    "url": "https://wimaketoursantaelena.com/tour/trekking-cascada-sagrada-panku"
+  },
+  {
+    "id": "full-day-san-lorenzo",
+    "titulo": "Full Day San Lorenzo",
+    "categoria": "un-dia",
+    "duracion": "1 día",
+    "precioDesdeCOP": 421000,
+    "descripcion": "Día en la Cuchilla de San Lorenzo: miradores a los picos nevados y al mar Caribe, cascadas y avistamiento de aves endémicas. Apto para quienes no buscan caminatas exigentes.",
+    "url": "https://wimaketoursantaelena.com/tour/full-day-san-lorenzo"
+  },
+  {
+    "id": "aventura-rio-don-diego",
+    "titulo": "Aventura Río Don Diego",
+    "categoria": "un-dia",
+    "duracion": "1 día",
+    "precioDesdeCOP": 451500,
+    "descripcion": "Cultura Tayrona y aventura de tubing en el río Don Diego.",
+    "url": "https://wimaketoursantaelena.com/tour/aventura-rio-don-diego"
+  },
+  {
+    "id": "cabo-de-lavela-2-dias-1-noche",
+    "titulo": "Cabo de la Vela 2D 1N",
+    "categoria": "guajira",
+    "duracion": "2 días, 1 noche",
+    "precioDesdeCOP": 450000,
+    "descripcion": "Desierto y mar en La Guajira, con experiencia de cultura Wayuu.",
+    "url": "https://wimaketoursantaelena.com/tour/cabo-de-lavela-2-dias-1-noche"
+  },
+  {
+    "id": "punta-gallinas-3-dias",
+    "titulo": "Punta Gallinas 3 Días",
+    "categoria": "guajira",
+    "duracion": "3 días, 2 noches",
+    "precioDesdeCOP": 750000,
+    "descripcion": "El punto más septentrional de Sudamérica: dunas y cielos estrellados en La Guajira.",
+    "url": "https://wimaketoursantaelena.com/tour/punta-gallinas-3-dias"
+  }
+]
