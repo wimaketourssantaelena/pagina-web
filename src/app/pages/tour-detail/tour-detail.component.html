@@ -32,14 +32,16 @@
           </article>
 
           <!-- GALERÍA -->
-          <article class="info-section animate-up" id="gallery">
-            <h2 class="section-title">{{ 'TOUR_DETAIL.GALLERY_TITLE' | translate }}</h2>
-            <div class="tour-collage">
-              @for (img of galeria; track img) {
-                <img [src]="img" alt="{{ t.title }}" (click)="openLightbox(img)">
-              }
-            </div>
-          </article>
+          @if (galeria().length) {
+            <article class="info-section animate-up" id="gallery">
+              <h2 class="section-title">{{ 'TOUR_DETAIL.GALLERY_TITLE' | translate }}</h2>
+              <div class="tour-collage">
+                @for (img of galeria(); track img) {
+                  <img [src]="img" alt="{{ t.title }}" (click)="openLightbox(img)">
+                }
+              </div>
+            </article>
+          }
 
           <!-- ITINERARIO LÍNEA DE TIEMPO -->
           <article class="info-section animate-up" id="itinerary">

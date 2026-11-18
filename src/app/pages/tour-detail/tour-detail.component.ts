@@ -20,17 +20,31 @@ export class TourDetailComponent implements OnInit {
   slug = signal<string | null>(null);
   activeTab = signal('itinerario');
 
-  galeria = [
-    '/assets/galeria/amanecer.jpeg',
-    '/assets/galeria/montana.jpeg',
-    '/assets/galeria/cascada.jpeg',
-    '/assets/galeria/columpio.jpeg',
-    '/assets/galeria/arcoiris.jpeg',
-    '/assets/galeria/aves.jpeg',
-    '/assets/galeria/montana2.jpeg',
-    '/assets/galeria/aves1.jpeg',
-    '/assets/galeria/nombre.jpeg'
+  // Galería general: la usan los tours que no tienen una propia
+  private galeriaGeneral = [
+    '/assets/img/img2.jpeg',
+    '/assets/img/img1.jpeg',
+    '/assets/img/img3.jpeg',
+    '/assets/img/img4.jpg',
+    '/assets/img/img5.jpeg'
   ];
+
+  // Galería propia de cada tour (clave = slug del tour)
+  private galerias: Record<string, string[]> = {
+    'trekking-cerro-kennedy-3-dias-2-noches': [
+      '/assets/galeria/amanecer.jpeg',
+      '/assets/galeria/montana.jpeg',
+      '/assets/galeria/cascada.jpeg',
+      '/assets/galeria/columpio.jpeg',
+      '/assets/galeria/arcoiris.jpeg',
+      '/assets/galeria/aves.jpeg',
+      '/assets/galeria/montana2.jpeg',
+      '/assets/galeria/aves1.jpeg',
+      '/assets/galeria/nombre.jpeg'
+    ]
+  };
+
+  galeria = computed(() => this.galerias[this.slug() ?? ''] ?? this.galeriaGeneral);
 
   lightboxImg = signal<string | null>(null);
 
